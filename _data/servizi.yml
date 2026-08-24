@@ -1,0 +1,38 @@
+# Le sei aree di intervento, dal banner Spartacus.
+# icona: chiave definita in _includes/icone.html
+
+- titolo: "Biomeccanica"
+  sottotitolo: "Bike Fitting"
+  icona: "bici"
+  testo: "Analisi posturale avanzata per la massima efficienza, senza dolore in sella."
+  link: "/bike-fitting/"
+
+- titolo: "Preparazione"
+  sottotitolo: "Performance"
+  icona: "grafico"
+  testo: "Piani di allenamento personalizzati costruiti su dati scientifici, non su tabelle copiate."
+  link: "/coaching/"
+
+- titolo: "Analisi"
+  sottotitolo: "Dati & Test"
+  icona: "cuore"
+  testo: "Test fisiologici e lettura dei dati per misurare davvero i progressi."
+  link: "/metodo/"
+
+- titolo: "Allenamento"
+  sottotitolo: "Su misura"
+  icona: "bersaglio"
+  testo: "Strategie e protocolli specifici per ogni atleta e per ogni obiettivo."
+  link: "/coaching/"
+
+- titolo: "Consulenze"
+  sottotitolo: "Acquisto e ricerca"
+  icona: "carrello"
+  testo: "Consulenza indipendente per la scelta di bici, componenti e attrezzatura."
+  link: "/vetrina/"
+
+- titolo: "Nutrizione"
+  sottotitolo: "Periodizzata"
+  icona: "scudo"
+  testo: "Strategie alimentari sincronizzate con i macrocicli, idratazione e gut training."
+  link: "/metodo/"

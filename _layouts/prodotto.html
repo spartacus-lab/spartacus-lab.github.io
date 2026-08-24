@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<section class="page-head diag">
+  <div class="wrap">
+    <span class="eyebrow">{{ page.categoria }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.sommario %}<p class="lead">{{ page.sommario }}</p>{% endif %}
+    <p style="margin-top:1.5rem">
+      <span class="prodotto__prezzo" style="font-size:2.4rem">
+        {% if page.prezzo %}{{ page.prezzo }}{% else %}Prezzo su richiesta{% endif %}
+      </span>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {% if page.immagini and page.immagini.size > 0 %}
+      <div class="galleria" style="margin-bottom:3rem">
+        {% for img in page.immagini %}
+          <figure><img src="{{ img | relative_url }}" alt="{{ page.title }}" loading="lazy"></figure>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="split" style="align-items:start">
+      <div class="prose">{{ content }}</div>
+
+      <div>
+        {% if page.specifiche %}
+          <h3>Scheda tecnica</h3>
+          <dl class="specs">
+            {% for s in page.specifiche %}
+              <div><dt>{{ s.voce }}</dt><dd>{{ s.valore }}</dd></div>
+            {% endfor %}
+          </dl>
+        {% endif %}
+
+        <div class="nota" style="margin-top:2rem">
+          <p style="margin-bottom:1rem"><strong>Vendita gestita direttamente.</strong>
+          Scrivimi per disponibilità, prova o spedizione: rispondo con tutti i dettagli.</p>
+          <a class="btn btn--wa" href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ 'Ciao Giuseppe, sono interessato a: ' | append: page.title | uri_escape }}">
+            Chiedi informazioni
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:3rem"><a href="{{ '/vetrina/' | relative_url }}">← Torna alla vetrina</a></p>
+  </div>
+</section>

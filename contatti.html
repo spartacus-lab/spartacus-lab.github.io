@@ -1,0 +1,84 @@
+---
+layout: page
+permalink: /contatti/
+title: "Contatti"
+eyebrow: "Parliamone"
+lead: "Raccontami obiettivo, livello attuale e cosa vuoi migliorare. Ti rispondo con indicazioni chiare sui prossimi passi — senza pacchetti preconfezionati."
+full_width: true
+no_cta: true
+description: "Contatta Spartacus per coaching, bike fitting o consulenza sull'acquisto. Pescina (AQ), Marsica — Abruzzo. Telefono e WhatsApp 388 483 0320."
+---
+
+<div class="grid grid-2">
+  <a class="card card--link" href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ site.contatti.whatsapp_msg | uri_escape }}">
+    <div class="card__kicker">Il modo più rapido</div>
+    <h3>WhatsApp</h3>
+    <p>Scrivimi direttamente: è il canale che uso di più e dove rispondo prima.
+    Va benissimo anche solo per capire se ha senso lavorare insieme.</p>
+    <p style="margin-top:1rem"><strong style="color:var(--rosso);font-size:1.3rem;font-family:var(--display)">{{ site.contatti.telefono }}</strong></p>
+  </a>
+
+  <a class="card card--link" href="mailto:{{ site.contatti.email }}">
+    <div class="card__kicker">Per richieste articolate</div>
+    <h3>E-mail</h3>
+    <p>Se hai storico allenamenti, referti o una situazione complessa da raccontare,
+    la mail è più comoda. Allega pure quello che ti sembra utile.</p>
+    <p style="margin-top:1rem"><strong style="color:var(--rosso);font-family:var(--display);font-size:1.15rem;letter-spacing:.02em">{{ site.contatti.email }}</strong></p>
+  </a>
+</div>
+
+<div class="grid grid-3" style="margin-top:1.5rem">
+  <div class="card">
+    <div class="card__ico">{% include icone.html nome="bici" %}</div>
+    <div class="card__kicker">Dove sono</div>
+    <p><strong>{{ site.contatti.citta }}</strong><br>{{ site.contatti.zona }}</p>
+    <p style="margin-top:.8rem">Il bike fitting si svolge in studio, su appuntamento.
+    Il coaching si segue interamente da remoto, ovunque tu sia.</p>
+  </div>
+  <div class="card">
+    <div class="card__ico">{% include icone.html nome="orologio" %}</div>
+    <div class="card__kicker">Tempi di risposta</div>
+    <p>Rispondo di norma entro 24-48 ore. Se stai già seguendo un percorso, i tempi
+    di assistenza sono quelli del tuo piano.</p>
+  </div>
+  <div class="card">
+    <div class="card__ico">{% include icone.html nome="scudo" %}</div>
+    <div class="card__kicker">Una nota</div>
+    <p>Non inserire diagnosi, referti o dati sanitari nel primo messaggio.
+    Se servono, ne parliamo nel modo corretto una volta avviato il percorso.</p>
+  </div>
+</div>
+
+<!-- ══ COSA SCRIVERE ═════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <span class="eyebrow">Per farmi risparmiare un giro di domande</span>
+  <h2>Cosa mi serve <span class="rosso">sapere</span></h2>
+
+  <div class="prose" style="margin-top:1.5rem">
+    <ul>
+      <li><strong>Disciplina e obiettivo</strong> — strada, MTB, granfondo, marathon;
+      una gara precisa oppure semplicemente andare meglio.</li>
+      <li><strong>Livello attuale</strong> — da quanto pedali, quante ore fai davvero
+      in una settimana normale, se hai già dei riferimenti (FTP, zone, test).</li>
+      <li><strong>Strumenti</strong> — cardiofrequenzimetro, misuratore di potenza,
+      ciclocomputer o orologio che usi.</li>
+      <li><strong>Cosa non funziona</strong> — dolori in sella, calo di rendimento,
+      stanchezza che non passa, oppure semplicemente la sensazione di essere fermo.</li>
+      <li><strong>Vincoli reali</strong> — lavoro, famiglia, giorni in cui non puoi
+      allenarti. Servono più dei numeri: il piano si costruisce su questi.</li>
+    </ul>
+  </div>
+
+  <div class="btn-row" style="margin-top:2.5rem">
+    <a class="btn btn--wa" href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ site.contatti.whatsapp_msg | uri_escape }}">
+      Scrivimi su WhatsApp
+    </a>
+    <a class="btn btn--ghost" href="tel:+{{ site.contatti.telefono_intl }}">Chiama {{ site.contatti.telefono }}</a>
+    <a class="btn btn--ghost" href="mailto:{{ site.contatti.email }}">Manda una mail</a>
+  </div>
+</div>
+
+<div class="nota" style="margin-top:3rem">
+  <p class="mb-0">Se hai meno di 18 anni, contattami insieme a un genitore o a chi
+  esercita la tutela.</p>
+</div>

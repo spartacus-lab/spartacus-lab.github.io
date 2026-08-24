@@ -1,0 +1,98 @@
+---
+layout: page
+permalink: /eventi/
+title: "Eventi sul territorio"
+eyebrow: "Marsica e Abruzzo"
+lead: "Notturne in MTB, trail e gare che seguo e promuovo. Usare il ciclismo per aggregare gli atleti del territorio e raccontare strade e sentieri che meritano molto più di quanto se ne parli."
+full_width: true
+description: "Eventi, gare e uscite in Abruzzo promossi da Spartacus: notturne MTB, trail running e granfondo tra la Marsica e la costa."
+---
+
+{% assign oggi = site.time | date: "%Y-%m-%d" %}
+{% assign eventi = site.eventi | sort: "data" %}
+
+{% assign futuri = "" | split: "" %}
+{% assign passati = "" | split: "" %}
+{% for e in eventi %}
+  {% assign d = e.data | date: "%Y-%m-%d" %}
+  {% if d >= oggi %}
+    {% assign futuri = futuri | push: e %}
+  {% else %}
+    {% assign passati = passati | push: e %}
+  {% endif %}
+{% endfor %}
+
+{% if futuri.size > 0 %}
+  <h2>In programma</h2>
+  <div class="eventi" style="margin-top:1.75rem">
+    {% for e in futuri %}
+      <a class="evento" href="{{ e.url | relative_url }}">
+        <div class="evento__data">
+          <span class="evento__giorno">{{ e.data | date: "%-d" }}</span>
+          <span class="evento__mese">{{ e.data | date: "%b" }}</span>
+        </div>
+        <div class="evento__body">
+          <h3>{{ e.title }}</h3>
+          <p class="evento__luogo">{{ e.luogo }}</p>
+          {% if e.tipo %}<span class="evento__tag">{{ e.tipo }}</span>{% endif %}
+        </div>
+        {% if e.locandina %}
+          <div class="evento__loc">
+            <img src="{{ e.locandina | relative_url }}" alt="" loading="lazy">
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if passati.size > 0 %}
+  <h2 style="margin-top:{% if futuri.size > 0 %}4rem{% else %}0{% endif %}">Edizioni passate</h2>
+  <div class="eventi" style="margin-top:1.75rem;opacity:.72">
+    {% assign passati_rev = passati | reverse %}
+    {% for e in passati_rev %}
+      <a class="evento" href="{{ e.url | relative_url }}">
+        <div class="evento__data">
+          <span class="evento__giorno">{{ e.data | date: "%-d" }}</span>
+          <span class="evento__mese">{{ e.data | date: "%b %y" }}</span>
+        </div>
+        <div class="evento__body">
+          <h3>{{ e.title }}</h3>
+          <p class="evento__luogo">{{ e.luogo }}</p>
+          {% if e.tipo %}<span class="evento__tag">{{ e.tipo }}</span>{% endif %}
+        </div>
+        {% if e.locandina %}
+          <div class="evento__loc">
+            <img src="{{ e.locandina | relative_url }}" alt="" loading="lazy">
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if eventi.size == 0 %}
+  <p class="lead">Il calendario è in aggiornamento. Scrivimi per sapere cosa bolle in pentola.</p>
+{% endif %}
+
+<div class="nota" style="margin-top:3rem">
+  <p class="mb-0">Gli eventi elencati sono organizzati da associazioni, pro loco e società
+  del territorio: qui li segnalo perché vale la pena esserci. Per iscrizioni e informazioni
+  fai sempre riferimento ai contatti dell'organizzatore indicati nella scheda.</p>
+</div>
+
+<!-- ══ TERRITORIO ════════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <span class="eyebrow">Il progetto</span>
+  <h2>Ricostruire<br>un <span class="rosso">gruppo</span></h2>
+  <p class="lead">
+    Spartacus non è solo coaching. C'è una parte del progetto che mi sta particolarmente a
+    cuore: aggregare gli atleti della zona, ricostruire gruppi di amatori che pedalano e
+    crescono insieme, e usare la bici come leva per far conoscere la Marsica e l'Abruzzo.
+  </p>
+  <p class="muted">
+    Se organizzi un evento in zona e cerchi supporto tecnico, o se vuoi semplicemente
+    sapere dove si pedala nei dintorni,
+    <a href="{{ '/contatti/' | relative_url }}">scrivimi</a>.
+  </p>
+</div>

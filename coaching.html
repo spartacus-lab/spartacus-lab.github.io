@@ -1,0 +1,175 @@
+---
+layout: page
+permalink: /coaching/
+title: "Coaching e programmazione"
+eyebrow: "Listino programmazione allenamento"
+lead: "Piani di allenamento personalizzati costruiti su obiettivi, livello di partenza e disponibilità reale, con monitoraggio continuo dei carichi e dei progressi."
+full_width: true
+description: "Programmi di allenamento personalizzati per ciclismo e MTB: Base, Plus, Pro ed Elite. Programmazione mensile, monitoraggio dei dati e supporto diretto."
+---
+
+<div class="piani">
+  {% for p in site.data.piani %}
+    <div class="piano{% if p.evidenza %} piano--hi{% endif %}">
+      {% if p.badge %}<span class="piano__badge">{{ p.badge }}</span>{% endif %}
+      <div class="piano__nome">{{ p.nome }}</div>
+      <p class="piano__claim">{{ p.claim }}</p>
+      <div class="piano__prezzo">{{ p.prezzo }}</div>
+      <div class="piano__periodo">{{ p.periodo }}</div>
+      <p class="piano__desc">{{ p.descrizione }}</p>
+
+      <dl class="piano__spec">
+        {% for s in p.specifiche %}
+          <dt>{{ s.voce }}</dt>
+          <dd>{{ s.valore }}</dd>
+        {% endfor %}
+      </dl>
+
+      <a class="btn {% if p.evidenza %}btn--primary{% else %}btn--ghost{% endif %}"
+         href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ 'Ciao Giuseppe, vorrei informazioni sul programma ' | append: p.nome | uri_escape }}">
+        Richiedi informazioni
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<p class="nota">
+  Il prezzo del pacchetto <strong>Elite</strong> viene definito insieme all'atleta in base
+  alla durata del percorso e agli obiettivi specifici.
+</p>
+
+<!-- ══ COME LAVORIAMO ════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <span class="eyebrow">Come si lavora</span>
+  <h2>Dal primo contatto<br>alla <span class="rosso">prima settimana</span></h2>
+
+  <div style="margin-top:2.5rem">
+    <div class="step">
+      <div class="step__n">01</div>
+      <div>
+        <h3>Valutazione iniziale</h3>
+        <p>Analizziamo livello attuale, storico degli allenamenti, carichi recenti e
+        obiettivi. Da qui definiamo i tuoi valori di riferimento: FTP, zone di potenza
+        e frequenza cardiaca, resistenza specifica.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__n">02</div>
+      <div>
+        <h3>Programma su misura</h3>
+        <p>Ricevi un piano costruito sulle ore che hai davvero, non su quelle che vorresti
+        avere. Ogni seduta ha un obiettivo chiaro: potenza, resistenza, gestione del ritmo,
+        tecnica di pedalata, capacità di recupero.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__n">03</div>
+      <div>
+        <h3>Monitoraggio dei dati</h3>
+        <p>Potenza, frequenza cardiaca, variabilità cardiaca e carico interno ed esterno
+        guidano gli aggiustamenti. Il metodo è semplice da seguire, ma preciso dal punto
+        di vista scientifico.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__n">04</div>
+      <div>
+        <h3>Revisione e supporto</h3>
+        <p>Analizziamo le tue uscite, correggiamo gli errori, gestiamo insieme gare,
+        periodizzazioni e momenti critici. L'obiettivo è farti pedalare meglio, non
+        soltanto di più.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REPORT ════════════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <span class="eyebrow">Analisi dati &amp; test</span>
+  <h2>Numeri che <span class="rosso">dicono qualcosa</span></h2>
+  <p class="lead">
+    Ogni mese ricevi un report leggibile: andamento della FTP, volume, tempo in sella e
+    distribuzione del lavoro nelle zone di potenza. Non per darti un voto — per decidere
+    cosa fare nelle settimane successive.
+  </p>
+
+  <div class="split__media" style="aspect-ratio:16/9;margin-top:2rem">
+    <img src="{{ '/assets/img/foto/report-mensile.jpg' | relative_url }}"
+         alt="Esempio di report mensile con FTP, volume e distribuzione nelle zone di potenza"
+         loading="lazy" style="object-fit:contain;background:var(--nero)">
+  </div>
+
+  <div class="grid grid-3" style="margin-top:2rem">
+    <div class="card">
+      <div class="card__kicker">Recupero</div>
+      <p>Frequenza a riposo, qualità del sonno, variabilità cardiaca.
+      Ti dice quanto sei carico: il conto è in attivo o in rosso?</p>
+    </div>
+    <div class="card">
+      <div class="card__kicker">Prestazione</div>
+      <p>Velocità a pari battiti in facile, riferimento di soglia.
+      Ti dice se la base cresce o se sei fermo.</p>
+    </div>
+    <div class="card">
+      <div class="card__kicker">Testa</div>
+      <p>Voglia di uscire, umore, lucidità. Spesso anticipa i numeri:
+      cala prima la testa, poi le gambe.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Se a pari battiti non vai più veloce, non stai migliorando: stai solo accumulando."</p>
+    <cite>La Pazienza dei Watt</cite>
+  </div>
+</div>
+
+<!-- ══ FAQ ═══════════════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <span class="eyebrow">Domande frequenti</span>
+  <h2>Prima di <span class="rosso">iniziare</span></h2>
+
+  <div class="faq" style="margin-top:2rem">
+    <details>
+      <summary>Serve per forza un misuratore di potenza?</summary>
+      <p>No. Serve almeno un cardiofrequenzimetro. Il misuratore di potenza rende la
+      programmazione più precisa e permette analisi più fini, ma si lavora bene anche
+      partendo dalla frequenza cardiaca e dalle sensazioni, purché i dati siano
+      raccolti con costanza.</p>
+    </details>
+    <details>
+      <summary>Quante ore a settimana devo avere a disposizione?</summary>
+      <p>Si costruisce sulle ore che hai davvero. Con tre o quattro ore a settimana si
+      lavora eccome: il facile conta di più, non di meno, e una sola dose di intensità
+      fatta da freschi vale più di tre fatte da stanchi. Il piano si piega a te,
+      non il contrario.</p>
+    </details>
+    <details>
+      <summary>Devo essere agonista?</summary>
+      <p>Assolutamente no. Lavoro con agonisti, granfondisti e amatori che vogliono
+      allenarsi con metodo senza perdere tempo. Cambiano gli obiettivi, non la serietà
+      dell'approccio.</p>
+    </details>
+    <details>
+      <summary>Su quale piattaforma arrivano gli allenamenti?</summary>
+      <p>La programmazione viene gestita su piattaforme dedicate al monitoraggio degli
+      allenamenti, con sincronizzazione verso il tuo ciclocomputer o orologio.
+      Ne parliamo al primo contatto in base agli strumenti che già usi.</p>
+    </details>
+    <details>
+      <summary>Posso sospendere il percorso?</summary>
+      <p>Sì. In caso di infortunio, malattia o periodi particolarmente pesanti si
+      riorganizza il programma o si mette in pausa. Fermarsi al momento giusto fa
+      parte del metodo, non è una sconfitta.</p>
+    </details>
+    <details>
+      <summary>Coaching e bike fitting sono servizi separati?</summary>
+      <p>Sono servizi distinti ma pensati per lavorare insieme. Prima di alzare
+      l'intensità ha senso validare la posizione in sella: è esattamente il secondo
+      livello del <a href="{{ '/metodo/' | relative_url }}">Modello Integrato</a>.
+      Se fai entrambi, la programmazione tiene conto dei dati del fitting.</p>
+    </details>
+  </div>
+</div>

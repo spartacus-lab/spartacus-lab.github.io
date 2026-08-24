@@ -1,0 +1,61 @@
+title: "Spartacus — Biomeccanica e Allenamento"
+tagline: "Scienza. Esperienza. Performance."
+description: >-
+  Coaching ciclismo, bike fitting biomeccanico e consulenza indipendente
+  per la scelta di bici e attrezzatura. Pescina (AQ), Marsica — Abruzzo.
+url: "https://spartacus-lab.github.io"
+baseurl: ""
+lang: it
+
+# ── Contatti ──────────────────────────────────────────────
+contatti:
+  nome: "Giuseppe Roscigno"
+  ruolo: "Dott. in Scienze Motorie · Specialista in Performance"
+  telefono: "388 483 0320"
+  telefono_intl: "393884830320"
+  email: "spartacusbikeshop@gmail.com"
+  citta: "Pescina (AQ)"
+  zona: "Marsica — Abruzzo"
+  whatsapp_msg: "Ciao Giuseppe, vorrei informazioni sui servizi Spartacus."
+
+social:
+  instagram: ""
+  facebook: ""
+
+# ── Collections ───────────────────────────────────────────
+collections:
+  prodotti:
+    output: true
+    permalink: /vetrina/:name/
+  eventi:
+    output: true
+    permalink: /eventi/:name/
+
+defaults:
+  - scope: { path: "", type: "prodotti" }
+    values: { layout: "prodotto" }
+  - scope: { path: "", type: "eventi" }
+    values: { layout: "evento" }
+  - scope: { path: "", type: "posts" }
+    values: { layout: "post" }
+  - scope: { path: "" }
+    values: { layout: "page" }
+
+# Approfondimenti e news: un file in _posts/ per articolo.
+# Nome file: AAAA-MM-GG-titolo-articolo.md
+permalink: /approfondimenti/:title/
+paginate: 9
+paginate_path: "/approfondimenti/pagina/:num/"
+
+# ── Build ─────────────────────────────────────────────────
+markdown: kramdown
+encoding: UTF-8
+theme: null
+plugins: []
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache

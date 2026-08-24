@@ -1,0 +1,86 @@
+---
+layout: page
+permalink: /approfondimenti/
+title: "Approfondimenti e news"
+eyebrow: "Il metodo, scritto"
+lead: "Allenamento, biomeccanica, recupero e nutrizione spiegati senza scorciatoie. Quello che dico agli atleti che seguo, messo per iscritto."
+full_width: true
+description: "Articoli e approfondimenti Spartacus su allenamento, biomeccanica, recupero e nutrizione nel ciclismo."
+---
+
+{% assign posts = site.posts %}
+
+{% if posts.size > 0 %}
+
+  {% assign categorie = posts | map: "categoria" | compact | uniq | sort %}
+  {% if categorie.size > 1 %}
+    <div class="filtri" style="margin-bottom:2.5rem">
+      <button class="filtro is-active" data-cat="tutti">Tutti</button>
+      {% for c in categorie %}
+        <button class="filtro" data-cat="{{ c | slugify }}">{{ c }}</button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="articoli" id="articoli">
+    {% for post in posts %}
+      <a class="articolo" href="{{ post.url | relative_url }}"
+         data-cat="{{ post.categoria | default: 'news' | slugify }}">
+        <div class="articolo__img">
+          {% if post.copertina %}
+            <img src="{{ post.copertina | relative_url }}" alt="" loading="lazy">
+          {% else %}
+            <div class="ph">{% include icone.html nome="elmo" %}</div>
+          {% endif %}
+          {% if post.categoria %}<span class="prodotto__cat">{{ post.categoria }}</span>{% endif %}
+        </div>
+        <div class="articolo__body">
+          <time class="articolo__data" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%-d %B %Y" }}
+          </time>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.sommario | default: post.excerpt | strip_html | truncate: 150 }}</p>
+          <span class="articolo__more">Leggi di più →</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <p class="nota" id="nessun-risultato" hidden>Nessun articolo in questa categoria.</p>
+
+{% else %}
+  <p class="lead">I primi approfondimenti stanno arrivando.</p>
+{% endif %}
+
+<!-- ══ EBOOK ═════════════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <div class="split">
+    <div>
+      <span class="eyebrow">Materiale gratuito</span>
+      <h2>La pazienza<br>dei <span class="rosso">watt</span></h2>
+      <p class="lead">
+        Come allenarti meno, recuperare meglio e tornare a migliorare quando eri convinto
+        di aver finito. Otto capitoli su stanchezza nascosta, Zona 2, recupero,
+        periodizzazione e misurazione dei progressi — con una cosa da fare entro domenica
+        alla fine di ognuno.
+      </p>
+      <p class="muted">
+        Scrivimi e te lo mando: è il modo più onesto che ho per farti capire come lavoro
+        prima ancora di parlare di preventivi.
+      </p>
+      <div class="btn-row" style="margin-top:1.75rem">
+        <a class="btn btn--primary"
+           href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ 'Ciao Giuseppe, vorrei ricevere La Pazienza dei Watt.' | uri_escape }}">
+          Richiedi l'ebook
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="quote" style="margin-top:0">
+        <p>"Quasi nessuno arriva davvero al proprio limite. I più si fermano molto prima,
+        rifacendo con più foga lo stesso errore che li tiene bloccati."</p>
+        <cite>La Pazienza dei Watt</cite>
+      </div>
+    </div>
+  </div>
+</div>

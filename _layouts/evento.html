@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<section class="page-head diag">
+  <div class="wrap">
+    <span class="eyebrow">{{ page.tipo }} · {{ page.data | date: "%-d %B %Y" }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.luogo %}<p class="lead">{{ page.luogo }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split" style="align-items:start">
+      <div class="prose">
+        {{ content }}
+        {% if page.locandina %}
+          <figure style="margin:2.5rem 0 0;border:1px solid var(--bordo)">
+            <img src="{{ page.locandina | relative_url }}" alt="Locandina — {{ page.title }}" loading="lazy">
+          </figure>
+        {% endif %}
+      </div>
+      <div>
+        <dl class="specs">
+          <div><dt>Data</dt><dd>{{ page.data | date: "%A %-d %B %Y" }}</dd></div>
+          {% if page.luogo %}<div><dt>Luogo</dt><dd>{{ page.luogo }}</dd></div>{% endif %}
+          {% if page.ritrovo %}<div><dt>Ritrovo</dt><dd>{{ page.ritrovo }}</dd></div>{% endif %}
+          {% if page.partenza %}<div><dt>Partenza</dt><dd>{{ page.partenza }}</dd></div>{% endif %}
+          {% if page.percorso %}<div><dt>Percorso</dt><dd>{{ page.percorso }}</dd></div>{% endif %}
+          {% if page.quota %}<div><dt>Iscrizione</dt><dd>{{ page.quota }}</dd></div>{% endif %}
+          {% if page.info %}<div><dt>Info</dt><dd>{{ page.info }}</dd></div>{% endif %}
+          {% if page.organizzatore %}<div><dt>Organizza</dt><dd>{{ page.organizzatore }}</dd></div>{% endif %}
+        </dl>
+      </div>
+    </div>
+
+    <p style="margin-top:3rem"><a href="{{ '/eventi/' | relative_url }}">← Torna agli eventi</a></p>
+  </div>
+</section>

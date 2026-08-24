@@ -1,0 +1,67 @@
+# Listino Programmazione Allenamento — Spartacus
+# Per modificare un piano basta cambiare i valori qui sotto.
+
+- nome: "Base"
+  claim: "Il primo passo verso un metodo di allenamento strutturato"
+  prezzo: "€300"
+  periodo: "Annuale"
+  descrizione: "Piano mensile personalizzato per una singola disciplina, con revisione a fine mese."
+  evidenza: false
+  specifiche:
+    - voce: "Programmazione"
+      valore: "Mensile, revisione base a fine mese (nessuna modifica infra-mensile)"
+    - voce: "Assistenza"
+      valore: "Via e-mail, risposta entro 72h"
+    - voce: "Requisiti"
+      valore: "Cardiofrequenzimetro o power meter"
+    - voce: "Durata"
+      valore: "Minimo 1 mese, rinnovo automatico"
+
+- nome: "Plus"
+  claim: "Un livello di assistenza e supporto più ravvicinato"
+  prezzo: "€600"
+  periodo: "Annuale"
+  descrizione: "Piano mensile con revisione e modifica ogni due settimane in base ai progressi."
+  evidenza: false
+  specifiche:
+    - voce: "Programmazione"
+      valore: "Mensile, revisione e modifica bisettimanale"
+    - voce: "Assistenza"
+      valore: "Via WhatsApp, risposta entro 48h"
+    - voce: "Requisiti"
+      valore: "Cardiofrequenzimetro o power meter"
+    - voce: "Durata"
+      valore: "Minimo 1 mese, rinnovo automatico"
+
+- nome: "Pro"
+  claim: "Analisi costante dei progressi, in allenamento e in gara"
+  prezzo: "€900"
+  periodo: "Annuale"
+  descrizione: "Revisione e modifica ogni settimana, con analisi approfondita dei dati di allenamento."
+  evidenza: true
+  badge: "Più richiesto"
+  specifiche:
+    - voce: "Programmazione"
+      valore: "Mensile, revisione e modifica settimanale, analisi approfondita dei dati"
+    - voce: "Assistenza"
+      valore: "Via WhatsApp, risposta entro 24-36h"
+    - voce: "Requisiti"
+      valore: "Cardiofrequenzimetro o power meter"
+    - voce: "Durata"
+      valore: "Minimo 1 mese, rinnovo automatico"
+
+- nome: "Elite"
+  claim: "Programmazione dedicata ad atleti evoluti, interamente personalizzabile"
+  prezzo: "Su preventivo"
+  periodo: "In base a durata e obiettivo"
+  descrizione: "Percorso su misura, anche in preparazione di una gara o di un evento specifico."
+  evidenza: false
+  specifiche:
+    - voce: "Programmazione"
+      valore: "Interamente personalizzata su obiettivi ed esigenze dell'atleta"
+    - voce: "Assistenza"
+      valore: "Contatto diretto e prioritario"
+    - voce: "Requisiti"
+      valore: "Cardiofrequenzimetro o power meter"
+    - voce: "Durata"
+      valore: "Definita in base agli obiettivi dell'atleta"

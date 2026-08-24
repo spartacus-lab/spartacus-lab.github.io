@@ -1,0 +1,92 @@
+---
+layout: page
+permalink: /vetrina/
+title: "Vetrina e consulenze"
+eyebrow: "Bici, ruote e attrezzatura"
+lead: "Consulenza indipendente e personalizzata per la scelta di bici, componenti e accessori. La vetrina raccoglie quello che ho disponibile: la vendita la gestisco direttamente."
+full_width: true
+description: "Vetrina Spartacus: bici da corsa, MTB, ruote assemblate a mano, componenti e accessori. Consulenza indipendente per l'acquisto. Pescina (AQ)."
+---
+
+<div class="nota" style="margin-bottom:3rem">
+  <p style="margin-bottom:.6rem"><strong>Come funziona.</strong> Questa pagina è una vetrina,
+  non un negozio online: non ci sono carrelli né pagamenti. Se qualcosa ti interessa,
+  scrivimi e ne parliamo — disponibilità, taglia giusta per le tue quote, prova ed eventuale
+  spedizione.</p>
+  <p class="mb-0">Prima di comprare, però, vale sempre la stessa regola: meglio partire dalle
+  tue misure e dal tuo uso reale che dal modello in offerta.
+  <a href="{{ '/bike-fitting/' | relative_url }}">La consulenza sull'acquisto</a> parte da lì.</p>
+</div>
+
+{% assign prodotti = site.prodotti | sort: "ordine" %}
+{% if prodotti.size > 0 %}
+
+  {% assign categorie = prodotti | map: "categoria" | uniq | sort %}
+  {% for cat in categorie %}
+    <h2 style="margin-top:3.5rem">{{ cat }}</h2>
+    <div class="prodotti" style="margin-top:1.75rem">
+      {% for p in prodotti %}
+        {% if p.categoria == cat %}
+          <a class="prodotto" href="{{ p.url | relative_url }}">
+            <div class="prodotto__img">
+              <span class="prodotto__cat">{{ p.categoria }}</span>
+              {% if p.copertina %}
+                <img src="{{ p.copertina | relative_url }}" alt="{{ p.title }}" loading="lazy"
+                     onerror="this.parentNode.querySelector('.ph-fb').hidden=false;this.remove()">
+                <div class="ph ph-fb" hidden style="position:absolute;inset:0">
+                  {% include icone.html nome="bici" %}
+                  <span>Foto in arrivo</span>
+                </div>
+              {% else %}
+                <div class="ph">
+                  {% include icone.html nome="bici" %}
+                  <span>Foto in arrivo</span>
+                </div>
+              {% endif %}
+            </div>
+            <div class="prodotto__body">
+              <h3>{{ p.title }}</h3>
+              <p class="prodotto__meta">{{ p.sommario }}</p>
+              <div class="prodotto__prezzo">
+                {% if p.prezzo %}{{ p.prezzo }}{% else %}Su richiesta{% endif %}
+                {% if p.stato %}<small>{{ p.stato }}</small>{% endif %}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+{% else %}
+  <p class="lead">La vetrina è in aggiornamento. Scrivimi per sapere cosa ho disponibile.</p>
+{% endif %}
+
+<!-- ══ CONSULENZA ════════════════════════════════════════ -->
+<div style="margin-top:5rem">
+  <span class="eyebrow">Consulenze di acquisto</span>
+  <h2>Ti serve davvero<br><span class="rosso">quella bici</span>?</h2>
+  <p class="lead">
+    Consulenza indipendente: non vendo un marchio, cerco quello che funziona per te.
+    Taglia e geometria compatibili con le tue quote, gruppo e rapporti adatti alle tue
+    strade, ruote scelte sul tuo peso e sul tuo terreno — non sul catalogo.
+  </p>
+
+  <div class="grid grid-3" style="margin-top:2.5rem">
+    <div class="card">
+      <div class="card__kicker">Nuovo acquisto</div>
+      <p>Definiamo budget e uso reale, poi confrontiamo i modelli davvero compatibili
+      con la tua posizione. Meglio spendere bene che spendere tanto.</p>
+    </div>
+    <div class="card">
+      <div class="card__kicker">Usato sicuro</div>
+      <p>Valutazione di un annuncio o di una bici usata: taglia, stato dei componenti,
+      congruità del prezzo, cosa andrà sostituito a breve.</p>
+    </div>
+    <div class="card">
+      <div class="card__kicker">Upgrade mirato</div>
+      <p>Ruote, guarnitura, misuratore di potenza, cockpit. Dove i soldi si trasformano
+      in secondi e dove invece finiscono solo in grammi.</p>
+    </div>
+  </div>
+</div>

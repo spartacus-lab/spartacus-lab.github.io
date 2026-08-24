@@ -1,0 +1,279 @@
+---
+layout: default
+title: "Spartacus — Biomeccanica e Allenamento"
+---
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" style="--hero-img:url('{{ '/assets/img/foto/giuseppe-pinarello.jpg' | relative_url }}')">
+  <div class="hero__bg"></div>
+  <div class="hero__photo"></div>
+  <div class="hero__streaks"></div>
+  <div class="wrap">
+    <div class="tricolore"><i></i><i></i><i></i></div>
+    <span class="eyebrow">Dott. in Scienze Motorie · Specialista in Performance</span>
+
+    <h1>Scienza.<br>Esperienza.<br><span class="rosso">Performance.</span></h1>
+
+    <p class="hero__sub">Il metodo su misura per ciclisti che vogliono fare la differenza.</p>
+
+    <div class="btn-row">
+      <a class="btn btn--primary" href="{{ '/coaching/' | relative_url }}">Scopri i programmi</a>
+      <a class="btn btn--ghost" href="{{ '/metodo/' | relative_url }}">Come lavoro</a>
+    </div>
+
+    <div class="hero__loc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      Pescina (AQ) — Abruzzo
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVIZI ═══════════════════════════════════════════ -->
+<section class="section section--alt diag">
+  <div class="wrap">
+    <span class="eyebrow">Cosa faccio</span>
+    <h2>La scienza al servizio<br>della <span class="rosso">tua performance</span></h2>
+    <p class="lead" style="margin-bottom:3rem">
+      Oltre ogni limite, un unico obiettivo: il tuo massimo potenziale.
+    </p>
+
+    <div class="servizi">
+      {% for s in site.data.servizi %}
+        <div class="servizio">
+          <div class="servizio__ico">{% include icone.html nome=s.icona %}</div>
+          <h3>{{ s.titolo }}<em>{{ s.sottotitolo }}</em></h3>
+          <p>{{ s.testo }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══ MODELLO INTEGRATO ═════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Il Modello Integrato</span>
+    <h2>Tre pilastri.<br>Un <span class="rosso">sistema unico</span>.</h2>
+    <p class="lead" style="margin-bottom:2.5rem">
+      La letteratura tratta allenamento, biomeccanica e nutrizione in compartimenti separati.
+      Il risultato sono interventi parziali, che ottimizzano una variabile degradandone un'altra.
+      Il mio lavoro parte da qui.
+    </p>
+
+    <div class="pilastri">
+      <div class="pilastro">
+        <h3>Allenamento<br>fisiologico</h3>
+        <p>Periodizzazione su macro, meso e microciclo. Distribuzione del carico secondo il
+        modello polarizzato, monitoraggio con TSS, HRV e TSB per prevenire l'overreaching.</p>
+      </div>
+      <div class="pilastro">
+        <h3>Biomeccanica<br>&amp; fitting</h3>
+        <p>Analisi cinematica della pedalata, indice di efficacia e potenza per arto.
+        Il fitting come prevenzione degli infortuni da sovraccarico, non come atto puntuale.</p>
+      </div>
+      <div class="pilastro">
+        <h3>Nutrizione<br>periodizzata</h3>
+        <p>Carboidrati in funzione del carico reale, timing pre/durante/post sforzo,
+        ripristino del glicogeno e prevenzione del deficit energetico (RED-S).</p>
+      </div>
+    </div>
+
+    <div class="risultato">
+      <p class="display">→ Performance <em>sostenibile</em></p>
+    </div>
+
+    <div class="quote">
+      <p>"La performance non è mai soltanto watt — è il risultato di un sistema che funziona."</p>
+      <cite>Tesi magistrale LM-47 · Management dello Sport</cite>
+    </div>
+
+    <a class="btn btn--ghost" href="{{ '/metodo/' | relative_url }}">Approfondisci il metodo</a>
+  </div>
+</section>
+
+<!-- ══ COACHING ══════════════════════════════════════════ -->
+<section class="section section--alt diag">
+  <div class="wrap">
+    <span class="eyebrow">Programmazione allenamento</span>
+    <h2>Scegli il livello<br>di <span class="rosso">supporto</span></h2>
+    <p class="lead" style="margin-bottom:3rem">
+      Piani costruiti su obiettivi, livello di partenza e disponibilità reale,
+      con monitoraggio continuo dei carichi e dei progressi.
+    </p>
+
+    <div class="piani">
+      {% for p in site.data.piani %}
+        <div class="piano{% if p.evidenza %} piano--hi{% endif %}">
+          {% if p.badge %}<span class="piano__badge">{{ p.badge }}</span>{% endif %}
+          <div class="piano__nome">{{ p.nome }}</div>
+          <p class="piano__claim">{{ p.claim }}</p>
+          <div class="piano__prezzo">{{ p.prezzo }}</div>
+          <div class="piano__periodo">{{ p.periodo }}</div>
+          <p class="piano__desc">{{ p.descrizione }}</p>
+          <a class="btn btn--ghost" href="{{ '/coaching/' | relative_url }}">Dettagli</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <p class="nota">
+      Tutti i percorsi richiedono un cardiofrequenzimetro o un misuratore di potenza.
+      Il prezzo del pacchetto <strong>Elite</strong> viene definito insieme all'atleta,
+      in base alla durata del percorso e agli obiettivi specifici.
+    </p>
+  </div>
+</section>
+
+<!-- ══ BIKE FITTING ══════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Bike fitting biomeccanico</span>
+    <h2>Qual è il <span class="rosso">tuo problema</span>?</h2>
+    <p class="lead" style="margin-bottom:3rem">
+      Il dolore in sella non è il prezzo da pagare per andare forte.
+      Quasi sempre è un assetto che lavora contro di te.
+    </p>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="card__ico">{% include icone.html nome="bici" %}</div>
+        <h3>Dolore alle ginocchia</h3>
+        <p>Riposizionamento millimetrico di tacchette e sella per togliere il carico dall'articolazione.</p>
+      </div>
+      <div class="card">
+        <div class="card__ico">{% include icone.html nome="elmo" %}</div>
+        <h3>Mal di schiena</h3>
+        <p>Postura in sella e scarico della tensione dalla zona lombare e cervicale.</p>
+      </div>
+      <div class="card">
+        <div class="card__ico">{% include icone.html nome="scudo" %}</div>
+        <h3>Intorpidimento mani</h3>
+        <p>Distribuzione corretta del peso sull'avantreno per eliminare formicolio e perdita di sensibilità.</p>
+      </div>
+      <div class="card">
+        <div class="card__ico">{% include icone.html nome="grafico" %}</div>
+        <h3>Perdita di potenza</h3>
+        <p>Ottimizzazione della spinta sui pedali: stessi watt spesi, più watt trasferiti a terra.</p>
+      </div>
+    </div>
+
+    <div class="btn-row" style="margin-top:2.5rem">
+      <a class="btn btn--primary" href="{{ '/bike-fitting/' | relative_url }}">La visita in 5 fasi</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHI SONO ══════════════════════════════════════════ -->
+<section class="section section--alt diag">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Chi c'è dietro Spartacus</span>
+        <h2>Non prescrivo cure.<br><span class="rosso">Accompagno percorsi.</span></h2>
+        <p class="lead">
+          Sono Giuseppe Roscigno, coach di ciclismo, bike fitter e preparatore atletico.
+          Nel 2016 un overtraining non riconosciuto mi ha portato al ricovero: è stato il punto
+          più basso del mio percorso da atleta e, col tempo, la ragione per cui oggi faccio
+          questo lavoro.
+        </p>
+        <p class="muted">
+          Il mio obiettivo con ogni atleta non è renderlo dipendente da me, ma renderlo
+          autonomo — capace di leggere il proprio corpo, adattarsi e correggere la rotta
+          anche quando io non ci sono.
+        </p>
+        <div class="btn-row" style="margin-top:1.75rem">
+          <a class="btn btn--ghost" href="{{ '/chi-sono/' | relative_url }}">La storia completa</a>
+        </div>
+      </div>
+
+      <div class="split__media">
+        <img src="{{ '/assets/img/foto/giuseppe-misura.jpg' | relative_url }}"
+             alt="Giuseppe Roscigno durante il rilievo delle quote" loading="lazy">
+      </div>
+    </div>
+
+    <div class="stats" style="margin-top:3.5rem">
+      <div class="stat">
+        <div class="stat__n">LM-<em>47</em></div>
+        <div class="stat__l">Laurea magistrale<br>Scienze dello Sport</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n"><em>3</em> pilastri</div>
+        <div class="stat__l">Allenamento · Biomeccanica<br>Nutrizione</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n">Dal <em>2016</em></div>
+        <div class="stat__l">Esperienza diretta<br>sul recupero</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n"><em>Marsica</em></div>
+        <div class="stat__l">Base operativa<br>Pescina (AQ)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APPROFONDIMENTI ═══════════════════════════════════ -->
+{% if site.posts.size > 0 %}
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Approfondimenti e news</span>
+    <h2>Il metodo, <span class="rosso">scritto</span></h2>
+    <p class="lead" style="margin-bottom:3rem">
+      Allenamento, biomeccanica, recupero e nutrizione spiegati senza scorciatoie.
+      Quello che dico agli atleti che seguo, messo per iscritto.
+    </p>
+
+    <div class="articoli">
+      {% for post in site.posts limit: 3 %}
+        <a class="articolo" href="{{ post.url | relative_url }}">
+          <div class="articolo__img">
+            {% if post.copertina %}
+              <img src="{{ post.copertina | relative_url }}" alt="" loading="lazy">
+            {% else %}
+              <div class="ph">{% include icone.html nome="elmo" %}</div>
+            {% endif %}
+            {% if post.categoria %}<span class="prodotto__cat">{{ post.categoria }}</span>{% endif %}
+          </div>
+          <div class="articolo__body">
+            <time class="articolo__data" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.sommario | default: post.excerpt | strip_html | truncate: 130 }}</p>
+            <span class="articolo__more">Leggi di più →</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="btn-row" style="margin-top:2.5rem">
+      <a class="btn btn--ghost" href="{{ '/approfondimenti/' | relative_url }}">Tutti gli approfondimenti</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ══ VETRINA + EVENTI ══════════════════════════════════ -->
+<section class="section section--alt diag">
+  <div class="wrap">
+    <div class="grid grid-2">
+      <a class="card card--link" href="{{ '/vetrina/' | relative_url }}">
+        <div class="card__ico">{% include icone.html nome="carrello" %}</div>
+        <div class="card__kicker">Vetrina</div>
+        <h3>Bici, ruote e attrezzatura</h3>
+        <p>Bici da corsa, MTB, ruote assemblate a mano, componenti e accessori.
+        Consulenza indipendente per scegliere quello che serve davvero a te —
+        non quello che va di moda. Vendita gestita direttamente.</p>
+      </a>
+
+      <a class="card card--link" href="{{ '/eventi/' | relative_url }}">
+        <div class="card__ico">{% include icone.html nome="bersaglio" %}</div>
+        <div class="card__kicker">Territorio</div>
+        <h3>Eventi e gare in Abruzzo</h3>
+        <p>Notturne in MTB, trail e granfondo tra la Marsica e la costa.
+        Usare il ciclismo per aggregare gli atleti del territorio e raccontare
+        le strade e i sentieri dell'Abruzzo.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% include cta.html %}

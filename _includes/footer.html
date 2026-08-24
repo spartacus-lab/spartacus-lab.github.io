@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand brand--logo" href="{{ '/' | relative_url }}" style="margin-bottom:1.25rem" aria-label="Spartacus — home">
+          <img src="{{ '/assets/img/logo-spartacus.jpg' | relative_url }}"
+               alt="Spartacus — Biomeccanica e Allenamento" width="470" height="276">
+        </a>
+        <p class="muted" style="max-width:38ch">
+          Coaching, bike fitting e consulenza indipendente per ciclisti che vogliono
+          fare la differenza. Con base nella Marsica, in Abruzzo.
+        </p>
+        <div class="tricolore" style="margin-top:1.25rem"><i></i><i></i><i></i></div>
+      </div>
+
+      <div>
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="{{ '/coaching/' | relative_url }}">Coaching e programmazione</a></li>
+          <li><a href="{{ '/bike-fitting/' | relative_url }}">Bike fitting biomeccanico</a></li>
+          <li><a href="{{ '/metodo/' | relative_url }}">Il Modello Integrato</a></li>
+          <li><a href="{{ '/vetrina/' | relative_url }}">Vetrina bici e attrezzatura</a></li>
+          <li><a href="{{ '/eventi/' | relative_url }}">Eventi sul territorio</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="tel:+{{ site.contatti.telefono_intl }}">{{ site.contatti.telefono }}</a></li>
+          <li><a href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ site.contatti.whatsapp_msg | uri_escape }}">WhatsApp</a></li>
+          <li><a href="mailto:{{ site.contatti.email }}">{{ site.contatti.email }}</a></li>
+          <li class="muted">{{ site.contatti.citta }}<br>{{ site.contatti.zona }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>© {{ site.time | date: "%Y" }} Spartacus · {{ site.contatti.nome }}</span>
+      <span>{{ site.contatti.ruolo }}</span>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>

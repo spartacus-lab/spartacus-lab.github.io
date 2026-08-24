@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "spartacus",
+      "runtimeExecutable": "jekyll",
+      "runtimeArgs": ["serve", "--port", "4100", "--livereload"],
+      "port": 4100
+    }
+  ]
+}
