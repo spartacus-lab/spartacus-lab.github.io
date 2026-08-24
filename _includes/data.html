@@ -1,0 +1,19 @@
+{%- comment -%}
+Date in italiano. Jekyll non localizza il filtro `date`, quindi si mappa a mano.
+Uso:
+  {% include data.html d=page.date %}                  → 23 agosto 2026
+  {% include data.html d=page.date formato="breve" %}   → ago
+  {% include data.html d=page.date formato="breve-anno" %} → ago 26
+  {% include data.html d=page.date formato="completa" %}   → domenica 23 agosto 2026
+{%- endcomment -%}
+{%- assign mesi = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre" | split: "," -%}
+{%- assign mesi_brevi = "gen,feb,mar,apr,mag,giu,lug,ago,set,ott,nov,dic" | split: "," -%}
+{%- assign giorni = "domenica,lunedì,martedì,mercoledì,giovedì,venerdì,sabato" | split: "," -%}
+{%- assign i = include.d | date: "%-m" | minus: 1 -%}
+{%- assign g = include.d | date: "%w" | plus: 0 -%}
+{%- case include.formato -%}
+{%- when "breve" -%}{{ mesi_brevi[i] }}
+{%- when "breve-anno" -%}{{ mesi_brevi[i] }} {{ include.d | date: "%y" }}
+{%- when "completa" -%}{{ giorni[g] }} {{ include.d | date: "%-d" }} {{ mesi[i] }} {{ include.d | date: "%Y" }}
+{%- else -%}{{ include.d | date: "%-d" }} {{ mesi[i] }} {{ include.d | date: "%Y" }}
+{%- endcase -%}

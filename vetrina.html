@@ -22,41 +22,44 @@ description: "Vetrina Spartacus: bici da corsa, MTB, ruote assemblate a mano, co
 {% if prodotti.size > 0 %}
 
   {% assign categorie = prodotti | map: "categoria" | uniq | sort %}
-  {% for cat in categorie %}
-    <h2 style="margin-top:3.5rem">{{ cat }}</h2>
-    <div class="prodotti" style="margin-top:1.75rem">
-      {% for p in prodotti %}
-        {% if p.categoria == cat %}
-          <a class="prodotto" href="{{ p.url | relative_url }}">
-            <div class="prodotto__img">
-              <span class="prodotto__cat">{{ p.categoria }}</span>
-              {% if p.copertina %}
-                <img src="{{ p.copertina | relative_url }}" alt="{{ p.title }}" loading="lazy"
-                     onerror="this.parentNode.querySelector('.ph-fb').hidden=false;this.remove()">
-                <div class="ph ph-fb" hidden style="position:absolute;inset:0">
-                  {% include icone.html nome="bici" %}
-                  <span>Foto in arrivo</span>
-                </div>
-              {% else %}
-                <div class="ph">
-                  {% include icone.html nome="bici" %}
-                  <span>Foto in arrivo</span>
-                </div>
-              {% endif %}
-            </div>
-            <div class="prodotto__body">
-              <h3>{{ p.title }}</h3>
-              <p class="prodotto__meta">{{ p.sommario }}</p>
-              <div class="prodotto__prezzo">
-                {% if p.prezzo %}{{ p.prezzo }}{% else %}Su richiesta{% endif %}
-                {% if p.stato %}<small>{{ p.stato }}</small>{% endif %}
-              </div>
-            </div>
-          </a>
-        {% endif %}
+  {% if categorie.size > 1 %}
+    <div class="filtri" data-filtra="prodotti">
+      <button class="filtro is-active" data-cat="tutti">Tutto ({{ prodotti.size }})</button>
+      {% for cat in categorie %}
+        {% assign n = prodotti | where: "categoria", cat | size %}
+        <button class="filtro" data-cat="{{ cat | slugify }}">{{ cat }} ({{ n }})</button>
       {% endfor %}
     </div>
-  {% endfor %}
+  {% endif %}
+
+  <div class="prodotti" id="prodotti" style="margin-top:2.5rem">
+    {% for p in prodotti %}
+      <a class="prodotto" href="{{ p.url | relative_url }}" data-cat="{{ p.categoria | slugify }}">
+        <div class="prodotto__img">
+          <span class="prodotto__cat">{{ p.categoria }}</span>
+          {% if p.copertina %}
+            <img src="{{ p.copertina | relative_url }}" alt="{{ p.title }}" loading="lazy"
+                 onerror="this.closest('.prodotto__img').classList.add('is-vuoto');this.remove()">
+          {% else %}
+            <div class="ph">
+              {% include icone.html nome="bici" %}
+              <span>Foto in arrivo</span>
+            </div>
+          {% endif %}
+        </div>
+        <div class="prodotto__body">
+          <h3>{{ p.title }}</h3>
+          <p class="prodotto__meta">{{ p.sommario }}</p>
+          <div class="prodotto__prezzo">
+            {% if p.prezzo %}{{ p.prezzo }}{% else %}Su richiesta{% endif %}
+            {% if p.stato %}<small>{{ p.stato }}</small>{% endif %}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <p class="nota" data-vuoto="prodotti" hidden>Nessun prodotto in questa categoria.</p>
 
 {% else %}
   <p class="lead">La vetrina è in aggiornamento. Scrivimi per sapere cosa ho disponibile.</p>

@@ -3,7 +3,7 @@ layout: default
 ---
 <section class="page-head diag">
   <div class="wrap">
-    <span class="eyebrow">{{ page.tipo }} · {{ page.data | date: "%-d %B %Y" }}</span>
+    <span class="eyebrow">{{ page.tipo }} · {% include data.html d=page.data %}</span>
     <h1>{{ page.title }}</h1>
     {% if page.luogo %}<p class="lead">{{ page.luogo }}</p>{% endif %}
   </div>
@@ -22,7 +22,7 @@ layout: default
       </div>
       <div>
         <dl class="specs">
-          <div><dt>Data</dt><dd>{{ page.data | date: "%A %-d %B %Y" }}</dd></div>
+          <div><dt>Data</dt><dd>{% include data.html d=page.data formato="completa" %}</dd></div>
           {% if page.luogo %}<div><dt>Luogo</dt><dd>{{ page.luogo }}</dd></div>{% endif %}
           {% if page.ritrovo %}<div><dt>Ritrovo</dt><dd>{{ page.ritrovo }}</dd></div>{% endif %}
           {% if page.partenza %}<div><dt>Partenza</dt><dd>{{ page.partenza }}</dd></div>{% endif %}

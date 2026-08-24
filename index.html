@@ -235,7 +235,7 @@ title: "Spartacus — Biomeccanica e Allenamento"
             {% if post.categoria %}<span class="prodotto__cat">{{ post.categoria }}</span>{% endif %}
           </div>
           <div class="articolo__body">
-            <time class="articolo__data" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+            <time class="articolo__data" datetime="{{ post.date | date_to_xmlschema }}">{% include data.html d=post.date %}</time>
             <h3>{{ post.title }}</h3>
             <p>{{ post.sommario | default: post.excerpt | strip_html | truncate: 130 }}</p>
             <span class="articolo__more">Leggi di più →</span>

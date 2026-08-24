@@ -33,6 +33,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* `hidden` deve vincere sui display dichiarati più sotto (.ph, .articolo, .prodotto) */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
@@ -476,6 +479,12 @@ section { position: relative; }
   overflow: hidden; position: relative;
 }
 .prodotto__img img { width: 100%; height: 100%; object-fit: cover; }
+/* Se la foto non carica, il riquadro resta comunque intenzionale */
+.prodotto__img.is-vuoto {
+  background:
+    repeating-linear-gradient(115deg, transparent 0 22px, rgba(255,255,255,.02) 22px 23px),
+    var(--nero-3);
+}
 .prodotto__cat {
   position: absolute; top: .8rem; left: .8rem; z-index: 2;
   background: rgba(8,8,10,.85); border: 1px solid var(--bordo-hi);

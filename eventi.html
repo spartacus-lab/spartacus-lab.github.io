@@ -29,7 +29,7 @@ description: "Eventi, gare e uscite in Abruzzo promossi da Spartacus: notturne M
       <a class="evento" href="{{ e.url | relative_url }}">
         <div class="evento__data">
           <span class="evento__giorno">{{ e.data | date: "%-d" }}</span>
-          <span class="evento__mese">{{ e.data | date: "%b" }}</span>
+          <span class="evento__mese">{% include data.html d=e.data formato="breve" %}</span>
         </div>
         <div class="evento__body">
           <h3>{{ e.title }}</h3>
@@ -54,7 +54,7 @@ description: "Eventi, gare e uscite in Abruzzo promossi da Spartacus: notturne M
       <a class="evento" href="{{ e.url | relative_url }}">
         <div class="evento__data">
           <span class="evento__giorno">{{ e.data | date: "%-d" }}</span>
-          <span class="evento__mese">{{ e.data | date: "%b %y" }}</span>
+          <span class="evento__mese">{% include data.html d=e.data formato="breve-anno" %}</span>
         </div>
         <div class="evento__body">
           <h3>{{ e.title }}</h3>

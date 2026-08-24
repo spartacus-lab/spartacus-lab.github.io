@@ -14,7 +14,7 @@ description: "Articoli e approfondimenti Spartacus su allenamento, biomeccanica,
 
   {% assign categorie = posts | map: "categoria" | compact | uniq | sort %}
   {% if categorie.size > 1 %}
-    <div class="filtri" style="margin-bottom:2.5rem">
+    <div class="filtri" data-filtra="articoli" style="margin-bottom:2.5rem">
       <button class="filtro is-active" data-cat="tutti">Tutti</button>
       {% for c in categorie %}
         <button class="filtro" data-cat="{{ c | slugify }}">{{ c }}</button>
@@ -36,7 +36,7 @@ description: "Articoli e approfondimenti Spartacus su allenamento, biomeccanica,
         </div>
         <div class="articolo__body">
           <time class="articolo__data" datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%-d %B %Y" }}
+            {% include data.html d=post.date %}
           </time>
           <h3>{{ post.title }}</h3>
           <p>{{ post.sommario | default: post.excerpt | strip_html | truncate: 150 }}</p>
@@ -46,7 +46,7 @@ description: "Articoli e approfondimenti Spartacus su allenamento, biomeccanica,
     {% endfor %}
   </div>
 
-  <p class="nota" id="nessun-risultato" hidden>Nessun articolo in questa categoria.</p>
+  <p class="nota" data-vuoto="articoli" hidden>Nessun articolo in questa categoria.</p>
 
 {% else %}
   <p class="lead">I primi approfondimenti stanno arrivando.</p>

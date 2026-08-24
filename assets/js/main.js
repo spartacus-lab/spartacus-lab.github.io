@@ -18,27 +18,34 @@
   });
 })();
 
-// Filtro categorie negli approfondimenti
+// Filtro per categoria — riusabile su vetrina e approfondimenti.
+// Markup atteso:
+//   <div class="filtri" data-filtra="NOME">…<button data-cat="…">…</div>
+//   <div id="NOME">…<a data-cat="…">…</div>
+//   <p data-vuoto="NOME" hidden>…</p>
 (function () {
-  var filtri = document.querySelectorAll('.filtro');
-  var lista = document.getElementById('articoli');
-  if (!filtri.length || !lista) return;
+  document.querySelectorAll('.filtri[data-filtra]').forEach(function (gruppo) {
+    var nome = gruppo.dataset.filtra;
+    var lista = document.getElementById(nome);
+    if (!lista) return;
 
-  var articoli = lista.querySelectorAll('.articolo');
-  var vuoto = document.getElementById('nessun-risultato');
+    var bottoni = gruppo.querySelectorAll('.filtro');
+    var voci = lista.querySelectorAll('[data-cat]');
+    var vuoto = document.querySelector('[data-vuoto="' + nome + '"]');
 
-  filtri.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var cat = btn.dataset.cat;
-      filtri.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+    bottoni.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var cat = btn.dataset.cat;
+        bottoni.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
 
-      var visibili = 0;
-      articoli.forEach(function (a) {
-        var mostra = cat === 'tutti' || a.dataset.cat === cat;
-        a.hidden = !mostra;
-        if (mostra) visibili++;
+        var visibili = 0;
+        voci.forEach(function (v) {
+          var mostra = cat === 'tutti' || v.dataset.cat === cat;
+          v.hidden = !mostra;
+          if (mostra) visibili++;
+        });
+        if (vuoto) vuoto.hidden = visibili > 0;
       });
-      if (vuoto) vuoto.hidden = visibili > 0;
     });
   });
 })();
