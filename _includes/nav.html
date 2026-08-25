@@ -10,7 +10,7 @@
     </button>
 
     <nav class="nav" id="nav">
-      {% assign voci = "/metodo/|Metodo,/coaching/|Coaching,/bike-fitting/|Bike Fitting,/vetrina/|Vetrina,/approfondimenti/|News,/eventi/|Eventi,/chi-sono/|Chi Sono" | split: "," %}
+      {% assign voci = "/metodo/|Metodo,/coaching/|Coaching,/bike-fitting/|Bike Fitting,/vetrina/|Vetrina,/approfondimenti/|Articoli,/eventi/|Eventi,/chi-sono/|Chi Sono" | split: "," %}
       {% for voce in voci %}
         {% assign p = voce | split: "|" %}
         <a href="{{ p[0] | relative_url }}"{% if page.url contains p[0] %} class="is-active"{% endif %}>{{ p[1] }}</a>
