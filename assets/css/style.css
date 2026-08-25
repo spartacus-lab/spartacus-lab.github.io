@@ -479,11 +479,18 @@ section { position: relative; }
   overflow: hidden; position: relative;
 }
 .prodotto__img img { width: 100%; height: 100%; object-fit: cover; }
-/* Se la foto non carica, il riquadro resta comunque intenzionale */
+/* Se la foto non carica (o non è ancora stata caricata sul repo) */
 .prodotto__img.is-vuoto {
   background:
     repeating-linear-gradient(115deg, transparent 0 22px, rgba(255,255,255,.02) 22px 23px),
     var(--nero-3);
+}
+.prodotto__img.is-vuoto::after {
+  content: "Foto in arrivo";
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: .68rem; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--grigio-dim);
 }
 .prodotto__cat {
   position: absolute; top: .8rem; left: .8rem; z-index: 2;
@@ -531,14 +538,15 @@ section { position: relative; }
 
 /* ── Eventi ────────────────────────────────────────────── */
 
-.eventi { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.eventi { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); }
+@media (max-width: 520px) { .eventi { grid-template-columns: 1fr; } }
 .evento {
-  display: grid; grid-template-columns: 84px 1fr auto;
+  display: grid; grid-template-columns: 88px minmax(0, 1fr) auto;
   background: var(--nero-2); border: 1px solid var(--bordo);
   color: inherit; transition: border-color .2s, transform .2s;
 }
 .evento__loc {
-  width: 96px; border-left: 1px solid var(--bordo); overflow: hidden;
+  width: 104px; border-left: 1px solid var(--bordo); overflow: hidden;
   background: var(--nero-3);
 }
 .evento__loc img { width: 100%; height: 100%; object-fit: cover; }
