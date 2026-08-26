@@ -5,8 +5,9 @@ ordine: 10
 prezzo: "Su richiesta"
 stato: "Su misura"
 sommario: "Coppia ruote in carbonio artigianali su mozzi Viper, 1233 g la coppia, montate una per una per la massima affidabilità."
-copertina: /assets/img/prodotti/ruote-carbon-01.jpg
+copertina: /assets/img/prodotti/ruote-carbon-03.jpg
 immagini:
+  - /assets/img/prodotti/ruote-carbon-03.jpg
   - /assets/img/prodotti/ruote-carbon-01.jpg
   - /assets/img/prodotti/ruote-carbon-02.jpg
 specifiche:
