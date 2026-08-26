@@ -196,6 +196,19 @@ section { position: relative; }
 }
 .nav__cta { margin-left: .4rem; }
 
+.nav__lang {
+  font-family: var(--display);
+  font-size: .9rem; font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--grigio);
+  background: transparent;
+  border: 1px solid var(--bordo-hi);
+  padding: .4rem .85rem;
+  cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+.nav__lang:hover { border-color: var(--rosso); color: var(--rosso); }
+
 .nav-toggle {
   display: none; background: none; border: 0; cursor: pointer;
   padding: .5rem; color: var(--bianco);
@@ -215,7 +228,18 @@ section { position: relative; }
   .nav a { padding: .85rem 0; border-bottom: 1px solid var(--bordo); font-size: 1.15rem; }
   .nav a.is-active::after { display: none; }
   .nav__cta { margin: 1rem 0 0; justify-content: center; }
+  .nav__lang { margin-top: 1rem; align-self: flex-start; }
 }
+
+/* ── Traduzione (Google Website Translator) ───────────────
+   Il widget resta nascosto: usiamo solo il nostro pulsante EN/IT.
+   Queste regole tolgono la barra e l'evidenziazione che Google
+   inietta di default, per non rompere il layout scuro del sito. */
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
+.goog-tooltip, .goog-tooltip:hover { display: none !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+#google_translate_element { display: none; }
 
 /* ── Hero ──────────────────────────────────────────────── */
 

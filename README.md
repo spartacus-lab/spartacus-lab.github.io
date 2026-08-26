@@ -237,9 +237,29 @@ git add . && git commit -m "Aggiunto prodotto X" && git push
 ### Stack
 
 Jekyll 3.10 statico (versione GitHub Pages), **nessun plugin non-whitelisted**, nessun
-build step JS, nessuna dipendenza esterna a runtime a parte Google Fonts.
+build step JS. Uniche dipendenze esterne a runtime: Google Fonts e il widget Google
+Website Translator (traduzione EN, vedi sotto).
 Il CSS è un unico file scritto a mano — **non c'è Sass**: `assets/css/style.css` viene
 servito così com'è.
+
+### Traduzione in inglese
+
+Il sito resta italiano-only nei contenuti: non esistono pagine `/en/` né file
+duplicati per lingua. La traduzione è live, lato browser, tramite il widget
+**Google Website Translator**, caricato in `_includes/footer.html`
+(`google_translate_element` + script `translate.google.com/translate_a/element.js`).
+
+Il pulsante **EN / IT** in `_includes/nav.html` (`#lang-toggle`) non mostra
+l'interfaccia di Google: pilota il `<select class="goog-te-combo">` che il widget
+inietta nel DOM e la logica sta in `assets/js/main.js`. In `style.css` la sezione
+"Traduzione" nasconde la barra e l'evidenziazione che Google aggiunge di default,
+per non rompere il layout scuro.
+
+Vantaggio: **zero manutenzione** — ogni contenuto nuovo (prodotto, evento, articolo)
+è tradotto automaticamente al volo, senza bisogno di creare o sincronizzare file
+separati. Limite: è una traduzione automatica (qualità Google Translate, non
+rivista), e non crea URL indicizzabili in inglese — per la SEO il sito resta
+italiano.
 
 ### Alberatura
 

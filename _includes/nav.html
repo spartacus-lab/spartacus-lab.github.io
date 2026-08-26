@@ -15,6 +15,7 @@
         {% assign p = voce | split: "|" %}
         <a href="{{ p[0] | relative_url }}"{% if page.url contains p[0] %} class="is-active"{% endif %}>{{ p[1] }}</a>
       {% endfor %}
+      <button type="button" id="lang-toggle" class="nav__lang" aria-label="Switch to English">EN</button>
       <a class="btn btn--primary nav__cta" href="{{ '/contatti/' | relative_url }}">Contatti</a>
     </nav>
   </div>
