@@ -11,7 +11,6 @@ immagini:
   - /assets/img/prodotti/kit-spartacus-02.jpg
   - /assets/img/prodotti/kit-spartacus-03.jpg
   - /assets/img/prodotti/kit-spartacus-04.jpg
-  - /assets/img/prodotti/kit-spartacus-05.jpg
 specifiche:
   - voce: "Produttore"
     valore: "Daniello Sports Wear — Made in Italy"
