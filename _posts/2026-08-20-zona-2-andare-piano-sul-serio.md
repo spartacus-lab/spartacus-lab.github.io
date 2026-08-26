@@ -2,7 +2,7 @@
 title: "Zona 2: andare piano sul serio"
 categoria: "Allenamento"
 sommario: "L'andatura dove sembra che tu non stia facendo niente. È quella che alza il tetto a tutto il resto."
-copertina: /assets/img/prodotti/giant-01.jpg
+copertina: /assets/img/foto/zona-2-01.jpg
 tags: [zona 2, base, fondo]
 ---
 
