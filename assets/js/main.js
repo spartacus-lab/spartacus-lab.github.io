@@ -18,6 +18,23 @@
   });
 })();
 
+// Nasconde con forza la barra di Google Translate: il CSS di Google si carica
+// dinamicamente dopo il nostro e a volte vince la cascata, lasciando la barra
+// invisibile-ma-ancora-cliccabile sopra la nav (intercetta i click). Lo stile
+// inline con !important battle sempre i fogli di stile esterni.
+(function () {
+  function nascondi(nodo) {
+    nodo.style.setProperty('display', 'none', 'important');
+    nodo.style.setProperty('pointer-events', 'none', 'important');
+  }
+  function scansiona() {
+    document.querySelectorAll('body > div.skiptranslate').forEach(nascondi);
+    document.body.style.setProperty('top', '0', 'important');
+  }
+  scansiona();
+  new MutationObserver(scansiona).observe(document.body, { childList: true });
+})();
+
 // Traduzione EN/IT — pilota il widget Google Translate nascosto
 // tramite il pulsante nella nav, senza mostrare l'interfaccia di Google.
 // Lo stato si legge/scrive nel cookie "googtrans" (lo stesso che usa
