@@ -4,30 +4,22 @@ categoria: "Ruote"
 ordine: 10
 prezzo: "Su richiesta"
 stato: "Su misura"
-sommario: "Coppia ruote in carbonio costruita a mano su mozzi DT Swiss o Viper, pesata e verificata pezzo per pezzo."
+sommario: "Coppia ruote in carbonio artigianali su mozzi Viper, 1233 g la coppia, montate una per una per la massima affidabilità."
 copertina: /assets/img/prodotti/ruote-carbon-01.jpg
 immagini:
   - /assets/img/prodotti/ruote-carbon-01.jpg
   - /assets/img/prodotti/ruote-carbon-02.jpg
-  - /assets/img/prodotti/ruote-carbon-03.jpg
-  - /assets/img/prodotti/ruote-carbon-04.jpg
-  - /assets/img/prodotti/ruote-carbon-05.jpg
-  - /assets/img/prodotti/ruote-carbon-06.jpg
-  - /assets/img/prodotti/ruote-carbon-07.jpg
-  - /assets/img/prodotti/ruote-carbon-08.jpg
-  - /assets/img/prodotti/ruote-carbon-09.jpg
-  - /assets/img/prodotti/ruote-carbon-10.jpg
 specifiche:
   - voce: "Mozzi"
-    valore: "DT Swiss 350 Straightpull · Viper (a scelta)"
+    valore: "Viper"
   - voce: "Cerchi"
-    valore: "Carbonio, profilo a scelta in base a peso e terreno"
-  - voce: "Raggi"
-    valore: "Nipples a vista, finiture personalizzabili"
-  - voce: "Peso rilevato"
-    valore: "687 g / 828 g a seconda della configurazione"
+    valore: "Artigianali in carbonio, 1233 g la coppia"
+  - voce: "Corpo ruota libera"
+    valore: "Shimano o SRAM"
   - voce: "Compatibilità"
-    valore: "Disco, tubeless ready"
+    valore: "MTB, bici da corsa, eBike"
+  - voce: "Montaggio"
+    valore: "Ogni ruota montata singolarmente, per la massima affidabilità"
 ---
 
 Le ruote sono il punto in cui una bici cambia davvero carattere. Per questo non le
@@ -43,15 +35,13 @@ troppo rigido su asfalto rotto ti costa energia a ogni buca.
 
 ## Componenti selezionati
 
-Mozzi **DT Swiss 350 Straightpull** o **Viper** a seconda della configurazione,
-cerchi in carbonio scelti sul profilo giusto, raggi e nipples con finiture
-personalizzabili — anche in rosso Spartacus.
+Mozzi **Viper**, cerchi artigianali in carbonio da **1233 g la coppia**, corpo ruota
+libera **Shimano** o **SRAM** a scelta. Compatibili con MTB, bici da corsa ed eBike.
 
-## Ogni ruota viene pesata
+## Montate una per una
 
-Non ci sono pesi dichiarati a catalogo: ogni ruota che esce viene pesata e verificata
-prima della consegna, e il valore reale te lo comunico. Nessuna sorpresa in un senso
-o nell'altro.
+Non le assemblo in serie: ogni ruota viene montata singolarmente e verificata prima
+della consegna, per garantire la massima affidabilità pezzo per pezzo.
 
 Scrivimi con peso, disciplina e tipo di percorsi che affronti di solito: ti preparo
 un preventivo con due o tre configurazioni possibili.
