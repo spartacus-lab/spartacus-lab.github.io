@@ -235,7 +235,8 @@ section { position: relative; }
    Il widget resta nascosto: usiamo solo il nostro pulsante EN/IT.
    Queste regole tolgono la barra e l'evidenziazione che Google
    inietta di default, per non rompere il layout scuro del sito. */
-.goog-te-banner-frame { display: none !important; }
+.goog-te-banner-frame,
+body > div.skiptranslate { display: none !important; }
 body { top: 0 !important; }
 .goog-tooltip, .goog-tooltip:hover { display: none !important; }
 .goog-text-highlight { background: none !important; box-shadow: none !important; }

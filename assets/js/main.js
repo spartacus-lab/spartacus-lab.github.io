@@ -20,12 +20,15 @@
 
 // Traduzione EN/IT — pilota il widget Google Translate nascosto
 // tramite il pulsante nella nav, senza mostrare l'interfaccia di Google.
+// Lo stato si legge/scrive nel cookie "googtrans" (lo stesso che usa
+// Google) e si applica con un ricaricamento: è il modo più affidabile,
+// perché la struttura interna del widget cambia da una versione all'altra.
 (function () {
   var btn = document.getElementById('lang-toggle');
   if (!btn) return;
 
   function isEnglish() {
-    return document.cookie.indexOf('/it/en') !== -1;
+    return document.cookie.indexOf('googtrans=/it/en') !== -1;
   }
 
   function updateLabel() {
@@ -35,11 +38,13 @@
   }
 
   btn.addEventListener('click', function () {
-    var combo = document.querySelector('.goog-te-combo');
-    if (!combo) return;
-    combo.value = isEnglish() ? 'it' : 'en';
-    combo.dispatchEvent(new Event('change'));
-    setTimeout(updateLabel, 400);
+    if (isEnglish()) {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname + ';';
+    } else {
+      document.cookie = 'googtrans=/it/en; path=/';
+    }
+    location.reload();
   });
 
   updateLabel();
