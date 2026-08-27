@@ -2,7 +2,7 @@
 title: "Periodizzazione senza laurea"
 categoria: "Allenamento"
 sommario: "Carica, insisti, lascia decantare. Il ritmo dell'anno che trasforma la fatica in forma."
-copertina: /assets/img/prodotti/ruote-carbon-01.jpg
+copertina: /assets/img/foto/periodizzazione-01.jpg
 tags: [periodizzazione, blocchi, scarico]
 ---
 
