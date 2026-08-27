@@ -125,11 +125,44 @@ description: "Giuseppe Roscigno: coach di ciclismo, bike fitter e preparatore at
   <h2>Lo studio<br>a <span class="rosso">Pescina</span></h2>
   <p class="lead">
     Uno spazio attrezzato per il bike fitting e l'analisi: postazione con rullo interattivo
-    e schermo per il lavoro sotto sforzo, area di misura, banco tecnico e postazione dati
-    per l'analisi degli allenamenti.
+    e schermo per il lavoro sotto sforzo, area di misura, banco tecnico, postazione dati
+    e una SteamBOX per il recupero.
   </p>
 
-  <div class="galleria" style="margin-top:2rem">
+  <div class="grid grid-3" style="margin:2.5rem 0 3rem">
+    <div class="card">
+      <div class="card__ico">{% include icone.html nome="bici" %}</div>
+      <h3>Bici pronte per il fitting</h3>
+      <p>La tua bici montata sui rulli, pronta per la valutazione statica e dinamica,
+      senza tempi morti.</p>
+    </div>
+    <div class="card">
+      <div class="card__ico">{% include icone.html nome="grafico" %}</div>
+      <h3>Rullo interattivo e videoanalisi</h3>
+      <p>Pedalata ripresa e analizzata sotto sforzo, non da fermo: si vede cosa succede
+      quando conta davvero.</p>
+    </div>
+    <div class="card">
+      <div class="card__ico">{% include icone.html nome="microscopio" %}</div>
+      <h3>Postazione dati</h3>
+      <p>Ogni sessione tracciata e confrontata nel tempo, per decisioni basate sui numeri,
+      non sull'impressione.</p>
+    </div>
+    <div class="card">
+      <div class="card__ico">{% include icone.html nome="bersaglio" %}</div>
+      <h3>Area di misura</h3>
+      <p>Peso, altezza, dismetrie: i dati di partenza per un assetto costruito sul tuo
+      corpo reale, non a occhio.</p>
+    </div>
+    <div class="card">
+      <div class="card__ico">{% include icone.html nome="cuore" %}</div>
+      <h3>SteamBOX per il recupero</h3>
+      <p>Calore secco per accelerare il recupero muscolare dopo un lavoro intenso o una
+      gara — non un lusso, uno strumento in più.</p>
+    </div>
+  </div>
+
+  <div class="galleria">
     <figure><img src="{{ '/assets/img/foto/studio-bici-01.jpg' | relative_url }}" alt="Bici pronte per il bike fitting" loading="lazy"></figure>
     <figure><img src="{{ '/assets/img/foto/studio-bici-02.jpg' | relative_url }}" alt="Postazione con bici sui rulli" loading="lazy"></figure>
     <figure><img src="{{ '/assets/img/foto/studio-scrivania.jpg' | relative_url }}" alt="Postazione dati per l'analisi degli allenamenti" loading="lazy"></figure>
