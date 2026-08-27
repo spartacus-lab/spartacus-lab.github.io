@@ -22,6 +22,35 @@ description: "Eventi, gare e uscite in Abruzzo promossi da Spartacus: notturne M
   {% endif %}
 {% endfor %}
 
+<!-- ══ PROSSIMAMENTE ═══════════════════════════════════════ -->
+<div style="margin-bottom:4rem">
+  <span class="eyebrow">Prossimamente</span>
+  <h2>Performance <span class="rosso">Experience</span></h2>
+  <div class="split" style="align-items:start;margin-top:1.5rem">
+    <div class="split__media" style="aspect-ratio:1024/1536">
+      <img src="{{ '/assets/img/eventi/performance-experience.jpg' | relative_url }}"
+           alt="Performance Experience — Spartacus x CyclOnLab" loading="lazy">
+    </div>
+    <div>
+      <p class="lead">
+        Una giornata di test prestazionali nel mio studio, in collaborazione con
+        <strong>CyclOnLab</strong>: test VO2max, analisi biomeccanica 3D, analisi
+        della pedalata, pressione sella e tacchette. Circa un'ora a persona.
+      </p>
+      <p>
+        In programma a <strong>ottobre 2026</strong> — data esatta da confermare
+        in base alle adesioni, <strong>posti limitati</strong>. Scrivimi per
+        essere avvisato appena la data è fissata e prenotare il tuo posto.
+      </p>
+      <div class="btn-row" style="margin-top:1.5rem">
+        <a class="btn btn--wa" href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ "Ciao Giuseppe, vorrei essere avvisato per la Performance Experience di ottobre" | uri_escape }}">
+          Prenota il tuo posto
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% if futuri.size > 0 %}
   <h2>In programma</h2>
   <div class="eventi" style="margin-top:1.75rem">
