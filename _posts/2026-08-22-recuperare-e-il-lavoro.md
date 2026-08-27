@@ -2,7 +2,7 @@
 title: "Recuperare è il lavoro"
 categoria: "Recupero"
 sommario: "Lo stimolo dura due ore. Il resto lo fanno le ventidue in cui non pedali."
-copertina: /assets/img/foto/studio-02.jpg
+copertina: /assets/img/foto/recupero-01.jpg
 tags: [recupero, sonno, nutrizione]
 ---
 
