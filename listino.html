@@ -1,0 +1,39 @@
+---
+layout: page
+permalink: /listino/
+title: "Listino servizi"
+eyebrow: "Prezzi dei singoli servizi"
+lead: "Oltre ai percorsi di coaching continuativi, ogni servizio si può prenotare anche singolarmente."
+full_width: true
+description: "Listino servizi Spartacus: valutazione benessere, biomeccanica 2D, regolazione tacchette, analisi gara, consulenza d'acquisto. Prezzi IVA inclusa."
+---
+
+<div class="piani">
+  {% for s in site.data.listino %}
+    <div class="piano">
+      <div class="piano__nome">{{ s.nome }}</div>
+      <p class="piano__claim">{{ s.claim }}</p>
+      <div class="piano__prezzo">{{ s.prezzo }}</div>
+      <div class="piano__periodo">{{ s.periodo }}</div>
+
+      {% if s.specifiche %}
+        <dl class="piano__spec">
+          {% for sp in s.specifiche %}
+            <dt>{{ sp.voce }}</dt>
+            <dd>{{ sp.valore }}</dd>
+          {% endfor %}
+        </dl>
+      {% endif %}
+
+      <a class="btn btn--ghost"
+         href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ 'Ciao Giuseppe, vorrei prenotare: ' | append: s.nome | uri_escape }}">
+        Prenota
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<p class="nota">
+  I prezzi indicati sono IVA inclusa. Il listino può essere soggetto a variazioni:
+  per la conferma più aggiornata scrivimi direttamente.
+</p>

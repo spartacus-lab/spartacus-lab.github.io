@@ -1,0 +1,29 @@
+# Listino dei servizi singoli (non i percorsi di coaching, quelli sono in piani.yml)
+# Mostrato in /listino/. Prezzi IVA inclusa.
+
+- nome: "Valutazione Benessere"
+  claim: "Stile di vita, alimentazione e livello di stress"
+  prezzo: "€80"
+  periodo: "60 minuti"
+
+- nome: "Biomeccanica 2D"
+  claim: "Analisi bidimensionale del movimento per ottimizzare la performance e prevenire infortuni"
+  prezzo: "€100"
+  periodo: "60 minuti"
+  specifiche:
+    - voce: "Regolazione tacchette"
+      valore: "€20"
+    - voce: "Controllo"
+      valore: "€50"
+    - voce: "Rilevazione misure corporee"
+      valore: "€30"
+
+- nome: "Analisi Gara"
+  claim: "Dati post-gara — potenza, pacing, frequenza cardiaca — con report scritto"
+  prezzo: "€35"
+  periodo: "Seduta singola"
+
+- nome: "Consulenza di Vendita"
+  claim: "Scelta indipendente di attrezzatura e prodotti sportivi"
+  prezzo: "10%"
+  periodo: "Sul valore del prodotto"
