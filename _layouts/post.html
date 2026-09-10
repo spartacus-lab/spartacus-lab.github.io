@@ -3,7 +3,7 @@ layout: default
 ---
 <section class="page-head diag">
   <div class="wrap wrap--narrow">
-    <span class="eyebrow">{% if page.categoria %}{{ page.categoria }} · {% endif %}{% include data.html d=page.date %}</span>
+    <span class="eyebrow">{% if page.categoria %}{{ page.categoria }} · {% endif %}{% include data.html d=page.date %}{% if page.premium %} · <span class="rosso">Premium</span>{% endif %}</span>
     <h1>{{ page.title }}</h1>
     {% if page.sommario %}<p class="lead">{{ page.sommario }}</p>{% endif %}
   </div>
@@ -19,6 +19,25 @@ layout: default
     {% endif %}
 
     <article class="prose">{{ content }}</article>
+
+    {% if page.premium %}
+      <div class="nota" style="margin-top:2.5rem">
+        <p style="margin-bottom:.4rem"><strong>Articolo completo — PDF{% if page.pdf_pagine %} di {{ page.pdf_pagine }} pagine{% endif %}.</strong>
+        Quello che leggi qui sopra è l'anteprima. La versione integrale — framework,
+        protocollo pratico e parere del coach — è disponibile come PDF.</p>
+        <p class="mb-0" style="margin-bottom:1.2rem">Come funziona: paghi
+        <strong>€{{ page.prezzo }}</strong> con PayPal, poi mi invii lo screenshot della
+        ricevuta su WhatsApp e ti mando subito il PDF.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="{{ site.contatti.paypal }}/{{ page.prezzo }}EUR" rel="nofollow">
+            Acquista — €{{ page.prezzo }}
+          </a>
+          <a class="btn btn--wa" href="https://wa.me/{{ site.contatti.telefono_intl }}?text={{ 'Ciao Giuseppe, ho pagato l' | append: page.title | append: ' — ecco la ricevuta.' | uri_escape }}">
+            Ho pagato, invio la ricevuta
+          </a>
+        </div>
+      </div>
+    {% endif %}
 
     {% if page.tags and page.tags.size > 0 %}
       <p style="margin-top:2.5rem">

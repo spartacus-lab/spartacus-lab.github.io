@@ -33,6 +33,7 @@ description: "Articoli e approfondimenti Spartacus su allenamento, biomeccanica,
             <div class="ph">{% include icone.html nome="elmo" %}</div>
           {% endif %}
           {% if post.categoria %}<span class="prodotto__cat">{{ post.categoria }}</span>{% endif %}
+          {% if post.premium %}<span class="prodotto__cat" style="left:auto;right:.8rem;background:var(--rosso);border-color:var(--rosso);color:#fff">Premium · €{{ post.prezzo }}</span>{% endif %}
         </div>
         <div class="articolo__body">
           <time class="articolo__data" datetime="{{ post.date | date_to_xmlschema }}">
@@ -40,7 +41,7 @@ description: "Articoli e approfondimenti Spartacus su allenamento, biomeccanica,
           </time>
           <h3>{{ post.title }}</h3>
           <p>{{ post.sommario | default: post.excerpt | strip_html | truncate: 150 }}</p>
-          <span class="articolo__more">Leggi di più →</span>
+          <span class="articolo__more">{% if post.premium %}Leggi l'anteprima →{% else %}Leggi di più →{% endif %}</span>
         </div>
       </a>
     {% endfor %}
